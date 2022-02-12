@@ -1,23 +1,18 @@
 .App {
   min-height: 100vh;
-  background: darkmagenta;
+  background: black;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.tweet{
-  height: 300px;
+.Card{
+  height: 200px;
   width: 300px;
-  background: white;
-  border-radius: 30px;
+  background: rgb(223, 106, 106);
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}
-
-.blue{
-  color:blue;
-  font-size: 50px;
 }
