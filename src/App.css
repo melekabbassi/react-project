@@ -1,18 +1,7 @@
 .App {
   min-height: 100vh;
-  background: black;
+  background: #012a4a;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.Card{
-  height: 200px;
-  width: 300px;
-  background: rgb(223, 106, 106);
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
