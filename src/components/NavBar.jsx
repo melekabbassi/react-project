@@ -1,9 +1,10 @@
 import React from 'react'
+import popcorn from '../media/popcorn.svg'
 
 const NavBar = () => {
   return (
-    <div>
-        <img className="logo" src="" alt="logo" />
+    <div className="headerNav">
+        <img className="logo" src={popcorn} alt="logo" />
         <nav>
             <ul className="navLinks">
                 <li><a href="#">Movies</a></li>
