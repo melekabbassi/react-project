@@ -17,7 +17,7 @@
     background-color: #24252A;
 }
 
-li, a, .btn {
+li, a {
     font-family: "Montserrat",sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -27,7 +27,7 @@ li, a, .btn {
 
 .headerNav{
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     padding: 30px 10%;
 }
@@ -36,6 +36,7 @@ li, a, .btn {
   cursor: pointer;
   width: 3%;
   height: 3%;
+  margin-right: auto;
 }
 
 .navLinks{
@@ -56,18 +57,4 @@ li, a, .btn {
 
 .navLinks li a:hover{
   color: #0088a9;
-}
-
-.btn{
-  padding: 9px 25px;
-  background-color: rgba(0,136,169,1);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  margin-left: auto;
-}
-
-.btn:hover{
-  background-color: rgba(0,136,169,0.8);
 }

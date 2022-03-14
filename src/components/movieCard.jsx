@@ -5,8 +5,6 @@ import IconButton from '@mui/material/IconButton'
 import Star from '@material-ui/icons/Star'
 
 
-
-
 export default function MovieCard() {
 
   return (
