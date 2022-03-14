@@ -7,13 +7,11 @@ function App() {
   return (  
     <div className="navBar">
       <NavBar />
-    <div className= "App">  
-    
-    <MovieCard />
-    <MovieCard />
-    <MovieCard />
-    
-    </div>
+      <div className= "App">  
+        <MovieCard />
+        <MovieCard />
+        <MovieCard /> 
+      </div>
     </div> 
   );
 }
