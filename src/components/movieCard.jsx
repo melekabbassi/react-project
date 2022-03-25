@@ -1,25 +1,22 @@
-import Card from '@mui/material/Card'
-import CardMedia from '@mui/material/CardMedia'
-import CardActions from '@mui/material/CardActions'
-import IconButton from '@mui/material/IconButton'
-import Star from '@material-ui/icons/Star'
-
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function MovieCard() {
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component='video'
-        height="194"
-        video={'./media/Valorant 2022.01.29 - 18.52.54.05.DVR_Trim.mp4'}
-        alt="Valorant"
-      />
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <Star />
-        </IconButton>
-      </CardActions>
-    </Card>
+    <motion.div transition={{layout: { duration: 1.5, type: "spring"}}} layout="position" className="movieCard" onClick={() => setIsOpen(!isOpen)} >
+      <motion.h2>Framer Motion</motion.h2>
+      {isOpen && 
+      <motion.div className="expand">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Voluptatum vel quidem quas officiis nihil deleniti sit eligendi ipsum corporis quaerat, 
+          excepturi perspiciatis placeat possimus dolore ratione aspernatur et maiores! Quae!
+        </p>
+        <p layout>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, delectus!</p>
+      </motion.div>}
+    </motion.div>
   );
 }

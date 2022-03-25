@@ -10,7 +10,8 @@ function App() {
       <div className= "App">  
         <MovieCard />
         <MovieCard />
-        <MovieCard /> 
+        <MovieCard />
+        <MovieCard />
       </div>
     </div> 
   );
