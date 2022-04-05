@@ -1,66 +1,56 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import axios from 'axios'
+
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getDatabase, ref, onValue, updateStarCount} from "firebase/database";
+import firebaseConfig from '../config';
 
 export default function MovieCard() {
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);  
 
-  const axios = require("axios");
 
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios
-      .get(
-        'https://movie-database-alternative.p.rapidapi.com/',
-        {
-          params: {
-            s: 'Avengers Endgame',
-            r: 'json',
-            page: '1'
-          },
-          headers: {
-            'X-RapidAPI-Host': 'movie-database-alternative.p.rapidapi.com',
-            'X-RapidAPI-Key': 'f0b37ab954mshfc4a8677f14d73ap1d970ejsn10304caf731e'
-          }
-        }
-      )
-      .then(response => {
-        setData(response.data.Search);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, []);
+  const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    
+    const db = getDatabase();
+    const starCountRef = ref(db, 'posts/' + db.postId + '/starCount');
+    onValue(starCountRef, (snapshot) => {
+    const data = snapshot.val();
+    //updateStarCount(db.postElement, data);
+    }
+    );
 
   //show movie details
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-  //close movie details
-  const handleClose = () => {
-    setIsOpen(false);
-  };
-  //render movie details
-  const renderMovieDetails = () => {
-    const { Title, Year, imdbID, Type, Poster } = data;
-    console.log(data);
+
+  //play movie trailer
+  const handlePlay = () => {
+    const trailer = document.getElementById('trailer');
+    trailer.play();
   };
 
+  //get data from firebase
+  const [movie, setMovie] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const movieRef = ref(db, 'posts/' + db.postId);
+    onValue(movieRef, (snapshot) => {
+      const data = snapshot.val();
+      setMovie(data);
+    });
+  }, []);
 
-
-
+ 
   return (
-    <motion.div transition={{layout: { duration: 1.5, type: "spring"}}} layout="position" className="movieCard" onClick={() => setIsOpen(!isOpen)} >
-      <motion.h2>{data.Title}</motion.h2>
+    <motion.div transition={{layout: { duration: 1.5, type: "spring"}}} layout="position" className="movieCard" onClick={handleClick} >
+      <motion.h2>{movie.title}</motion.h2>
       {isOpen && 
       <motion.div className="expand">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Voluptatum vel quidem quas officiis nihil deleniti sit eligendi ipsum corporis quaerat, 
-          excepturi perspiciatis placeat possimus dolore ratione aspernatur et maiores! Quae!
-        </p>
-        <p layout>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, delectus!</p>
+        <motion.img src={movie.image} alt={movie.title} />
       </motion.div>}
     </motion.div>
   );
