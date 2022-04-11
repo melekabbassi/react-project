@@ -1,15 +1,16 @@
 import React from 'react'
 import popcorn from '../media/popcorn.svg'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
     <div className="headerNav">
-          <img className="logo" src={popcorn} alt="logo" />
+          <Link to="/"><img className="logo" src={popcorn} alt="logo" /></Link>
         <nav>
             <ul className="navLinks">
-                <li><a href="Movies">Movies</a></li>
-                <li><a href="TVShows">TV Shows</a></li>
-                <li><a href="aboutUs">About</a></li>
+                <li><Link to="/">Movies</Link></li>
+                <li><Link to="/favourite">Favourite</Link></li>
+                <li><Link to="/about">About</Link></li>
             </ul>
         </nav>
     </div>
