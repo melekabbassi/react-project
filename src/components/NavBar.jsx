@@ -8,9 +8,10 @@ const NavBar = () => {
           <Link to="/"><img className="logo" src={popcorn} alt="logo" /></Link>
         <nav>
             <ul className="navLinks">
-                <li><Link to="/">Movies</Link></li>
-                <li><Link to="/favourite">Favourite</Link></li>
                 <li><Link to="/about">About</Link></li>
+                <li><Link to="/favourite">Favourite</Link></li>
+                <li><Link to="/">Home</Link></li>
+                <input className="searchBar" type="text" placeholder="Search..."></input>
             </ul>
         </nav>
     </div>
