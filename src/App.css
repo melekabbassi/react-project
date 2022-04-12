@@ -18,7 +18,7 @@
     background-color: #24252A;
 }
 
-li, a {
+li, a, .search {
     font-family: "Montserrat",sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -28,8 +28,9 @@ li, a {
 
 .headerNav{
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    /* justify-content: flex-end; */
+    justify-content: space-between;
+    align-items: end;
     padding: 30px 10%;
 }
 
@@ -46,7 +47,7 @@ li, a {
 
 .navLinks li{
   display: inline-block;
-  padding: 0px 20px;
+  padding: 0px 150px;
 }
 
 .navLinks li a{
@@ -58,6 +59,19 @@ li, a {
 
 .navLinks li a:hover{
   color: #0088a9;
+}
+
+.search{
+  width: 20%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #edf0f1;
+  padding: 0px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #edf0f1;
 }
 
 .movieCard{

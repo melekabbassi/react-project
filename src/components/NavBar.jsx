@@ -12,6 +12,7 @@ const NavBar = () => {
                 <li><a href="aboutUs">About</a></li>
             </ul>
         </nav>
+          <input className="search" type="text" placeholder="Search" />
     </div>
   )
 }

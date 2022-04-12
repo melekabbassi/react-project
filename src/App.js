@@ -10,11 +10,13 @@ function App() {
     <div className="navBar">
       <NavBar />
       <div className= "App">  
-        {/* <MovieCard />
-        <MovieCard /> */}
-      
-        <Form />
+        <MovieCard />
+        <MovieCard />
+        <MovieCard />
       </div>
+      {/* <div>  
+        <Form />
+      </div> */}
     </div> 
   );
 }
