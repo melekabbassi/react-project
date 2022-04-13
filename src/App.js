@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState } from 'react';
-import {BrowserRouter as Router, Route, Switch, Layout} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import NavBar from './components/NavBar';
 import MovieCard from './components/movieCard'
